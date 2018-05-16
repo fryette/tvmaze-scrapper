@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TvMazeScrapper.Domain.TvMaze;
 using TvMazeScrapper.Infrastructure.Http;
 using TvMazeScrapper.Infrastructure.Interfaces.App;
 using TvMazeScrapper.Infrastructure.Interfaces.DataServices;
-using TvMazeScrapper.Models;
 using TvMazeScrapper.Models.App;
 using TvMazeScrapper.Services.Api.TvMazeApi.DataModels;
 using ShowData = TvMazeScrapper.Services.Api.TvMazeApi.DataModels.ShowData;

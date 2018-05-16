@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TvMazeScrapper.Domain.TvMaze;
-using TvMazeScrapper.Infrastructure.Interfaces;
 using TvMazeScrapper.Infrastructure.Interfaces.Api;
 using TvMazeScrapper.Infrastructure.Interfaces.DataServices;
 using TvMazeScrapper.Models.App;

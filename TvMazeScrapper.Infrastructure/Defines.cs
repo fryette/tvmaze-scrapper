@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TvMazeScrapper.Infrastructure
+﻿namespace TvMazeScrapper.Infrastructure
 {
     public static class Defines
     {
