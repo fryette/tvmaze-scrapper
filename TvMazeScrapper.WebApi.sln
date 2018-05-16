@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.Models", "Tv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.Services", "TvMazeScrapper.Services\TvMazeScrapper.Services.csproj", "{8F959126-7148-48C2-BBC8-987850094FDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.Domain", "TvMazeScrapper.Domain\TvMazeScrapper.Domain.csproj", "{8C4E36A0-0CC7-4C71-9CAF-807510F071C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.DataAccess", "TvMazeScrapper.DataAccess\TvMazeScrapper.DataAccess.csproj", "{6A454A2F-79A1-48F5-9386-62DDF88CE91B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{8F959126-7148-48C2-BBC8-987850094FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F959126-7148-48C2-BBC8-987850094FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F959126-7148-48C2-BBC8-987850094FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C4E36A0-0CC7-4C71-9CAF-807510F071C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4E36A0-0CC7-4C71-9CAF-807510F071C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4E36A0-0CC7-4C71-9CAF-807510F071C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4E36A0-0CC7-4C71-9CAF-807510F071C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A454A2F-79A1-48F5-9386-62DDF88CE91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A454A2F-79A1-48F5-9386-62DDF88CE91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A454A2F-79A1-48F5-9386-62DDF88CE91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A454A2F-79A1-48F5-9386-62DDF88CE91B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

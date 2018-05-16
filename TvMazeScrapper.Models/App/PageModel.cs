@@ -2,16 +2,16 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TvMazeScrapper.Models
+namespace TvMazeScrapper.Models.App
 {
-    public class Page
+    public class PageModel
     {
-        public Page()
+        public PageModel()
         {
 
         }
 
-        public Page(int pageNumber)
+        public PageModel(int pageNumber)
         {
             Id = pageNumber;
         }

@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TvMazeScrapper.Infrastructure.Interfaces;
+using TvMazeScrapper.Infrastructure.Interfaces.Api;
+using TvMazeScrapper.Infrastructure.Interfaces.DataServices;
 using TvMazeScrapper.Models;
+using TvMazeScrapper.Models.App;
 using TvMazeScrapper.Services.Api.TvMazeApi;
+using ShowData = TvMazeScrapper.Services.Api.DataModels.ShowData;
 
 namespace TvMazeScrapper.Services.Api
 {
@@ -37,11 +41,11 @@ namespace TvMazeScrapper.Services.Api
 
             foreach (var showModel in shows)
             {
-                var personsInfo = await _tvMazeApiService.FetchCastByShowIdAsync(showModel.Id);
-                showModel.Cast = personsInfo.Select(x => x.Person).OrderBy(x => x.Birthday).ToList();
+                var cast = await _tvMazeApiService.FetchCastByShowIdAsync(showModel.Id);
+                showModel.Cast = new List<PersonModel>(cast.OrderBy(x => x.Birthday));
             }
 
-            await _pageRepository.SavePageAsync(new Page(pageNumber)
+            await _pageRepository.SavePageAsync(new PageModel(pageNumber)
             {
                 Shows = shows.ToList()
             });

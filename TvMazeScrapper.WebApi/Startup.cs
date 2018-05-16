@@ -7,10 +7,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using TvMazeScrapper.Infrastructure.Http;
 using TvMazeScrapper.Infrastructure.Interfaces;
-using TvMazeScrapper.Infrastructure.JsonConverters;
-using TvMazeScrapper.Infrastructure.Serializers;
+using TvMazeScrapper.Infrastructure.Interfaces.Api;
+using TvMazeScrapper.Infrastructure.Interfaces.App;
+using TvMazeScrapper.Infrastructure.Interfaces.DataServices;
 using TvMazeScrapper.Services.Api;
 using TvMazeScrapper.Services.Api.TvMazeApi;
+using TvMazeScrapper.Services.App;
 using TvMazeScrapper.WebApi.DbContexts;
 
 namespace TvMazeScrapper.WebApi
@@ -37,6 +39,7 @@ namespace TvMazeScrapper.WebApi
             services.AddSingleton<IScrapperApiService, ScrapperService>();
             services.AddSingleton<ITvMazeApiService, TvMazeService>();
             services.AddSingleton<IPageRepository, PageRepository>();
+            services.AddSingleton<IMapper, Mapper>();
 
             services.AddMvc().AddJsonOptions(options =>
             {

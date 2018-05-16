@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using TvMazeScrapper.Models;
+using TvMazeScrapper.Models.App;
 
-namespace TvMazeScrapper.Services.Api
+namespace TvMazeScrapper.Infrastructure.Interfaces.Api
 {
     public interface IScrapperApiService
     {

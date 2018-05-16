@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TvMazeScrapper.Infrastructure.Interfaces.Api;
 using TvMazeScrapper.Models;
+using TvMazeScrapper.Models.App;
 using TvMazeScrapper.Services.Api;
 
 namespace TvMazeScrapper.WebApi.Controllers

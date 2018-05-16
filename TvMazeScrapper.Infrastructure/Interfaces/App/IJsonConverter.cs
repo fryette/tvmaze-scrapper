@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-
-namespace TvMazeScrapper.Infrastructure.Serializers
+﻿namespace TvMazeScrapper.Infrastructure.Interfaces.App
 {
     public interface IJsonConverter
     {

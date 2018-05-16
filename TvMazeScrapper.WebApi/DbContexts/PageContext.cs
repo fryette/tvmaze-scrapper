@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TvMazeScrapper.Domain;
 using TvMazeScrapper.Models;
 
 namespace TvMazeScrapper.WebApi.DbContexts
