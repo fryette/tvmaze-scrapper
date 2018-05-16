@@ -6,7 +6,7 @@ Shows available by the following address
 >{host}/api/shows
 
 ## Storage
-To simplify solution I used memory cache database. In any time we have possibility to database to another.
+To simplify solution I used memory cache database. In any time we have possibility to change database.
 
 ## Pagination
 
