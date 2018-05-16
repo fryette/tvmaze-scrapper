@@ -7,6 +7,6 @@ namespace TvMazeScrapper.Infrastructure.Interfaces.Api
 {
     public interface IScrapperApiService
     {
-        Task<List<ShowModel>> LoadShowsAsync(int pageNumber = 0);
+        Task<IEnumerable<ShowModel>> LoadShowsAsync(int pageNumber = 0);
     }
 }

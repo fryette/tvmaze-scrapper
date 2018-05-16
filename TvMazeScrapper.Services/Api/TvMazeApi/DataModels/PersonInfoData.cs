@@ -1,4 +1,4 @@
-﻿namespace TvMazeScrapper.Services.Api.DataModels
+﻿namespace TvMazeScrapper.Services.Api.TvMazeApi.DataModels
 {
     public class PersonInfoData
     {

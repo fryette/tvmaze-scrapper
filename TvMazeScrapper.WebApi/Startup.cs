@@ -32,10 +32,7 @@ namespace TvMazeScrapper.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PageContext>(
-                opt =>
-                    opt.UseInMemoryDatabase(DATABASE_NAME),
-                ServiceLifetime.Singleton);
+            services.AddDbContext<PageContext>(opt => opt.UseInMemoryDatabase(DATABASE_NAME), ServiceLifetime.Singleton);
 
             services.AddSingleton<IJsonConverter, NewtonJsonConverter>();
             services.AddSingleton<IHttpClient, HttpClient>();

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
 using TvMazeScrapper.Domain;
+using TvMazeScrapper.Domain.App;
+using TvMazeScrapper.Domain.TvMaze;
 using TvMazeScrapper.Models.App;
-using TvMazeScrapper.Services.Api.DataModels;
+using TvMazeScrapper.Services.Api.TvMazeApi.DataModels;
 
 namespace TvMazeScrapper.Services.App
 {
@@ -23,6 +25,8 @@ namespace TvMazeScrapper.Services.App
                     cfg.CreateMap<PersonModel, Person>();
                     cfg.CreateMap<PersonData, PersonModel>();
                     cfg.CreateMap<ShowData, ShowModel>();
+                    cfg.CreateMap<ShowModel, TvMazeShow>();
+                    cfg.CreateMap<PageModel, TvMazePage>();
                 }).CreateMapper();
         }
 
