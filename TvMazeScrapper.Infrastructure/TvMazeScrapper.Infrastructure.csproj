@@ -12,8 +12,4 @@
     <ProjectReference Include="..\TvMazeScrapper.Models\TvMazeScrapper.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Http\" />
-  </ItemGroup>
-
 </Project>

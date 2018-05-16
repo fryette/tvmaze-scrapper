@@ -36,19 +36,7 @@ namespace TvMazeScrapper.Services.Api
                 return page.Shows;
             }
 
-            var tvMazePage = GetTvMazePage(pageNumber);
-
-            var cachedTvMazePage = await _pageRepository.TryGetTvMazePageAsync(tvMazePage);
-
-            var shows = cachedTvMazePage != null ? cachedTvMazePage.Shows : (await _tvMazeApiService.FetchShowsAsync(tvMazePage)).ToList();
-
-            shows = shows.Skip(GetNumberOfItemsThatShouldBeSkipped(pageNumber)).Take(ITEMS_PER_PAGE).ToList();
-
-            foreach (var showModel in shows)
-            {
-                var cast = await _tvMazeApiService.FetchCastByShowIdAsync(showModel.Id);
-                showModel.Cast = new List<PersonModel>(cast.OrderBy(x => x.Birthday));
-            }
+            var shows = await MapCastToShowAsync(await LoadSowsAsync(pageNumber));
 
             await _pageRepository.SavePageAsync(new PageModel
             {
@@ -57,6 +45,28 @@ namespace TvMazeScrapper.Services.Api
             });
 
             return shows;
+        }
+
+        private async Task<IReadOnlyList<ShowModel>> MapCastToShowAsync(IReadOnlyList<ShowModel> shows)
+        {
+            foreach (var showModel in shows)
+            {
+                var cast = await _tvMazeApiService.FetchCastByShowIdAsync(showModel.Id);
+                showModel.Cast = new List<PersonModel>(cast.OrderBy(x => x.Birthday));
+            }
+
+            return shows;
+        }
+
+        private async Task<IReadOnlyList<ShowModel>> LoadSowsAsync(int pageNumber)
+        {
+            var tvMazePage = GetTvMazePage(pageNumber);
+
+            var cachedTvMazePage = await _pageRepository.TryGetTvMazePageAsync(tvMazePage);
+
+            var shows = cachedTvMazePage != null ? cachedTvMazePage.Shows : await _tvMazeApiService.FetchShowsAsync(tvMazePage);
+
+            return shows.Skip(GetNumberOfItemsThatShouldBeSkipped(pageNumber)).Take(ITEMS_PER_PAGE).ToList();
         }
 
         private int GetNumberOfItemsThatShouldBeSkipped(int pageNumber)

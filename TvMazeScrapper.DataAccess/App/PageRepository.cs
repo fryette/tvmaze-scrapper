@@ -10,10 +10,10 @@ namespace TvMazeScrapper.DataAccess
 {
     public class PageRepository : IPageRepository
     {
-        private readonly PageContext _dbContext;
+        private readonly ShowsContext _dbContext;
         private readonly IMapper _mapper;
 
-        public PageRepository(PageContext dbContext, IMapper mapper)
+        public PageRepository(ShowsContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

@@ -5,9 +5,9 @@ using TvMazeScrapper.Domain.TvMaze;
 
 namespace TvMazeScrapper.DataAccess
 {
-    public class PageContext : DbContext
+    public class ShowsContext : DbContext
     {
-        public PageContext(DbContextOptions options) : base(options) { }
+        public ShowsContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Page> Pages { get; set; }
 

@@ -14,7 +14,6 @@ using TvMazeScrapper.Infrastructure.Interfaces.DataServices;
 using TvMazeScrapper.Services.Api;
 using TvMazeScrapper.Services.Api.TvMazeApi;
 using TvMazeScrapper.Services.App;
-using PageContext = TvMazeScrapper.DataAccess.PageContext;
 
 namespace TvMazeScrapper.WebApi
 {
@@ -32,7 +31,7 @@ namespace TvMazeScrapper.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PageContext>(opt => opt.UseInMemoryDatabase(DATABASE_NAME), ServiceLifetime.Singleton);
+            services.AddDbContext<ShowsContext>(opt => opt.UseInMemoryDatabase(DATABASE_NAME), ServiceLifetime.Singleton);
 
             services.AddSingleton<IJsonConverter, NewtonJsonConverter>();
             services.AddSingleton<IHttpClient, HttpClient>();
