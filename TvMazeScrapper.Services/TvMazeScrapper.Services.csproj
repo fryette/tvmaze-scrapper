@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TvMazeScrapper.Infrastructure\TvMazeScrapper.Infrastructure.csproj" />
+    <ProjectReference Include="..\TvMazeScrapper.Models\TvMazeScrapper.Models.csproj" />
+  </ItemGroup>
+
+</Project>
