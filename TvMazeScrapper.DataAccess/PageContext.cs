@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TvMazeScrapper.Domain;
-using TvMazeScrapper.Models;
 
-namespace TvMazeScrapper.WebApi.DbContexts
+namespace TvMazeScrapper.DataAccess
 {
     public class PageContext : DbContext
     {

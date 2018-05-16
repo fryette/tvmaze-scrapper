@@ -1,13 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TvMazeScrapper.Domain;
-using TvMazeScrapper.Infrastructure.Interfaces;
 using TvMazeScrapper.Infrastructure.Interfaces.App;
 using TvMazeScrapper.Infrastructure.Interfaces.DataServices;
-using TvMazeScrapper.Models;
 using TvMazeScrapper.Models.App;
 
-namespace TvMazeScrapper.WebApi.DbContexts
+namespace TvMazeScrapper.DataAccess
 {
     public class PageRepository : IPageRepository
     {

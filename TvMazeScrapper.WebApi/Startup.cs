@@ -5,20 +5,23 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using TvMazeScrapper.DataAccess;
+using TvMazeScrapper.Infrastructure;
 using TvMazeScrapper.Infrastructure.Http;
-using TvMazeScrapper.Infrastructure.Interfaces;
 using TvMazeScrapper.Infrastructure.Interfaces.Api;
 using TvMazeScrapper.Infrastructure.Interfaces.App;
 using TvMazeScrapper.Infrastructure.Interfaces.DataServices;
 using TvMazeScrapper.Services.Api;
 using TvMazeScrapper.Services.Api.TvMazeApi;
 using TvMazeScrapper.Services.App;
-using TvMazeScrapper.WebApi.DbContexts;
+using PageContext = TvMazeScrapper.DataAccess.PageContext;
 
 namespace TvMazeScrapper.WebApi
 {
     public class Startup
     {
+        private const string DATABASE_NAME = "MazeScrapper";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,7 +34,7 @@ namespace TvMazeScrapper.WebApi
         {
             services.AddDbContext<PageContext>(
                 opt =>
-                    opt.UseInMemoryDatabase("Pages"),
+                    opt.UseInMemoryDatabase(DATABASE_NAME),
                 ServiceLifetime.Singleton);
 
             services.AddSingleton<IJsonConverter, NewtonJsonConverter>();
@@ -46,7 +49,7 @@ namespace TvMazeScrapper.WebApi
                 options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 options.SerializerSettings.DefaultValueHandling = DefaultValueHandling.Include;
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                options.SerializerSettings.DateFormatString = "yyyy-MM-dd";
+                options.SerializerSettings.DateFormatString = Defines.DATE_FORMAT;
             });
         }
 

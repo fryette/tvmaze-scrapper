@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TvMazeScrapper.DataAccess\TvMazeScrapper.DataAccess.csproj" />
     <ProjectReference Include="..\TvMazeScrapper.Infrastructure\TvMazeScrapper.Infrastructure.csproj" />
     <ProjectReference Include="..\TvMazeScrapper.Services\TvMazeScrapper.Services.csproj" />
   </ItemGroup>
