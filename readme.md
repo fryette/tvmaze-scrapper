@@ -5,6 +5,8 @@ Shows available by the following address
 
 >{host}/api/shows
 
+![alt text](https://github.com/fryette/tvmaze-scrapper/blob/master/screenshot.PNG)
+
 ## Storage
 To simplify solution I used memory cache database. In any time we have possibility to change database.
 
