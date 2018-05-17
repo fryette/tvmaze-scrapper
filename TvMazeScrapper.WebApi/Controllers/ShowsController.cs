@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TvMazeScrapper.Infrastructure.Interfaces.Api;
-using TvMazeScrapper.Models.App;
 
 namespace TvMazeScrapper.WebApi.Controllers
 {
@@ -17,9 +16,21 @@ namespace TvMazeScrapper.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ShowModel>> Get(int page = 0)
+        public async Task<IActionResult> Get(int page = 0)
         {
-            return await _apiService.LoadShowsAsync(page).ConfigureAwait(false);
+            if (page < 0)
+            {
+                return NotFound();
+            }
+
+            var data = await _apiService.LoadShowsAsync(page).ConfigureAwait(false);
+
+            if (data.Any())
+            {
+                return Ok(data);
+            }
+
+            return NoContent();
         }
     }
 }
