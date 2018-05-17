@@ -9,6 +9,7 @@ namespace TvMazeScrapper.Domain.TvMaze
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
+
         public IEnumerable<TvMazeShow> Shows { get; set; }
     }
 }

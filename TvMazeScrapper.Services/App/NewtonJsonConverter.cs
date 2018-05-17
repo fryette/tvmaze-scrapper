@@ -10,7 +10,7 @@ namespace TvMazeScrapper.Services.App
         {
             if (!string.IsNullOrEmpty(DateTimeFormat))
             {
-                var dateTimeConverter = new IsoDateTimeConverter { DateTimeFormat = DateTimeFormat };
+                var dateTimeConverter = new IsoDateTimeConverter {DateTimeFormat = DateTimeFormat};
                 return JsonConvert.DeserializeObject<T>(jsonString, dateTimeConverter);
             }
 

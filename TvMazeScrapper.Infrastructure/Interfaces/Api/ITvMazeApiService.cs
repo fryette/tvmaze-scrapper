@@ -7,7 +7,7 @@ namespace TvMazeScrapper.Services.Api.TvMazeApi
 {
     public interface ITvMazeApiService
     {
-        Task<IEnumerable<ShowModel>> FetchShowsAsync(int page);
+        Task<PageModel> FetchShowsAsync(int page);
         Task<List<PersonModel>> FetchCastByShowIdAsync(string showId);
     }
 }

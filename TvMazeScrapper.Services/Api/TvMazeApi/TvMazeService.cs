@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TvMazeScrapper.DataAccess;
+using TvMazeScrapper.Domain.TvMaze;
 using TvMazeScrapper.Infrastructure.Http;
 using TvMazeScrapper.Infrastructure.Interfaces.App;
-using TvMazeScrapper.Infrastructure.Interfaces.DataServices;
 using TvMazeScrapper.Models.App;
 using TvMazeScrapper.Services.Api.TvMazeApi.DataModels;
-using ShowData = TvMazeScrapper.Services.Api.TvMazeApi.DataModels.ShowData;
 
 namespace TvMazeScrapper.Services.Api.TvMazeApi
 {
@@ -19,24 +19,29 @@ namespace TvMazeScrapper.Services.Api.TvMazeApi
         private readonly IHttpClient _client;
         private readonly IJsonConverter _json;
         private readonly IMapper _mapper;
-        private readonly IPageRepository _pageRepository;
+        private readonly IRepository<TvMazePage> _repository;
 
-        public TvMazeService(IHttpClient client, IJsonConverter json, IMapper mapper, IPageRepository pageRepository)
+        public TvMazeService(
+            IHttpClient client,
+            IJsonConverter json,
+            IMapper mapper,
+            IRepository<TvMazePage> repository)
         {
             _client = client;
             _json = json;
             _mapper = mapper;
-            _pageRepository = pageRepository;
+            _repository = repository;
         }
 
-        public async Task<IEnumerable<ShowModel>> FetchShowsAsync(int page)
+        public async Task<PageModel> FetchShowsAsync(int pageNumber)
         {
-            var response = await _client.GetAsync(string.Format(SHOWS_API_ENDPOINT, page));
+            var response = await _client.GetAsync(string.Format(SHOWS_API_ENDPOINT, pageNumber));
             var showsData = _json.Deserialize<List<ShowData>>(response);
-            var result = _mapper.MapCollection<ShowData, ShowModel>(showsData).ToList();
+            var showsModel = _mapper.MapCollection<ShowData, ShowModel>(showsData).ToList();
 
-            await _pageRepository.SaveTvMazePageAsync(
-                new PageModel { Id = page, Shows = result });
+            var result = new PageModel {Id = pageNumber, Shows = showsModel};
+
+            await _repository.SaveAsync(_mapper.Map<TvMazePage>(result));
 
             return result;
         }

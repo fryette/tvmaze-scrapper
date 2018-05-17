@@ -19,7 +19,7 @@ namespace TvMazeScrapper.WebApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<ShowModel>> Get(int page = 0)
         {
-            return await _apiService.LoadShowsAsync(page);
+            return await _apiService.LoadShowsAsync(page).ConfigureAwait(false);
         }
     }
 }
