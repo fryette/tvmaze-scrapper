@@ -6,23 +6,21 @@ namespace MazePage
 {
     public sealed class MazePageModule : NancyModule
     {
-        public MazePageModule(ITvMazePageApiService mazePageApiService, IMazePageStore store) : base("/shows")
+        public MazePageModule(IMazePageClient mazePageClient, IMazePageStore store) : base("/shows")
         {
-            Get("/",
+            Get(
+                "/",
                 async _ =>
                 {
                     MazePageData result = await store.GetMazePageAsync(Request.Query.page);
 
                     if (result == null)
                     {
-                        result = await mazePageApiService.FetchShowsAsync(Request.Query.page);
+                        result = await mazePageClient.FetchShowsAsync(Request.Query.page);
                         await store.SaveMazePageAsync(result);
                     }
 
-                    return
-                        Negotiate
-                            .WithModel(result)
-                            .WithHeader("cache-control", "max-age:86400");
+                    return Negotiate.WithModel(result).WithHeader("cache-control", "max-age:86400");
                 });
         }
     }

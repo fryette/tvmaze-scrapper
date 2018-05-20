@@ -9,26 +9,26 @@ using Polly;
 
 namespace MazePage.Services
 {
-    public class TvMazePageService : ITvMazePageApiService
+    public class MazePageClient : IMazePageClient
     {
         private const string SHOWS_API_ENDPOINT = "http://api.tvmaze.com/shows";
-
-        private readonly HttpClient _client = new HttpClient { BaseAddress = new Uri(SHOWS_API_ENDPOINT) };
         private const string GET_MAZE_PAGE_PATH_TEMPLATE = "?page={0}";
+        private readonly HttpClient _client = new HttpClient { BaseAddress = new Uri(SHOWS_API_ENDPOINT) };
 
-        private static readonly Policy ExponentialRetryPolicy =
+        private readonly Policy _exponentialRetryPolicy =
             Policy
                 .Handle<Exception>()
                 .WaitAndRetryAsync(
                     3,
                     attempt => TimeSpan.FromMilliseconds(100 * Math.Pow(2, attempt)),
+                    //TODO: Should be used microservice for logging instedof Console
                     (ex, _) => Console.WriteLine(ex.ToString()));
 
         public async Task<MazePageData> FetchShowsAsync(int pageNumber)
         {
-            string response = string.Empty;
+            var response = string.Empty;
 
-            await ExponentialRetryPolicy.ExecuteAsync(
+            await _exponentialRetryPolicy.ExecuteAsync(
                 async () =>
                 {
                     response = await _client.GetStringAsync(string.Format(GET_MAZE_PAGE_PATH_TEMPLATE, pageNumber)).ConfigureAwait(false);

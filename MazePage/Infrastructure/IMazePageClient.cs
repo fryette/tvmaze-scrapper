@@ -3,7 +3,7 @@ using MazePage.DataModels;
 
 namespace MazePage.Infrastructure
 {
-    public interface ITvMazePageApiService
+    public interface IMazePageClient
     {
         Task<MazePageData> FetchShowsAsync(int page);
     }
