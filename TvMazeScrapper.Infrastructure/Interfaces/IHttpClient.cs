@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace TvMazeScrapper.Infrastructure.Http
+namespace TvMazeScrapper.Infrastructure.Interfaces
 {
     public interface IHttpClient
     {

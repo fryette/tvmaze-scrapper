@@ -9,7 +9,7 @@ using TvMazeScrapper.DataAccess;
 using TvMazeScrapper.Domain.App;
 using TvMazeScrapper.Domain.TvMaze;
 using TvMazeScrapper.Infrastructure;
-using TvMazeScrapper.Infrastructure.Http;
+using TvMazeScrapper.Infrastructure.Interfaces;
 using TvMazeScrapper.Infrastructure.Interfaces.Api;
 using TvMazeScrapper.Infrastructure.Interfaces.App;
 using TvMazeScrapper.Infrastructure.Interfaces.Providers;

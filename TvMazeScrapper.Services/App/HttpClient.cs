@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using TvMazeScrapper.Infrastructure.Http;
+using TvMazeScrapper.Infrastructure.Interfaces;
 
 namespace TvMazeScrapper.Services.App
 {

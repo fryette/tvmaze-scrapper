@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.WebApi", "TvMazeScrapper.WebApi\TvMazeScrapper.WebApi.csproj", "{11711C72-0748-47C6-8ADF-9090C98E1D30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMazeScrapper.WebApi", "TvMazeScrapper.WebApi\TvMazeScrapper.WebApi.csproj", "{11711C72-0748-47C6-8ADF-9090C98E1D30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.Infrastructure", "TvMazeScrapper.Infrastructure\TvMazeScrapper.Infrastructure.csproj", "{46BF5088-E2FA-4EE2-937F-DF2BB4B7DED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMazeScrapper.Infrastructure", "TvMazeScrapper.Infrastructure\TvMazeScrapper.Infrastructure.csproj", "{46BF5088-E2FA-4EE2-937F-DF2BB4B7DED4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.Models", "TvMazeScrapper.Models\TvMazeScrapper.Models.csproj", "{68332452-B061-488E-B8AA-372E319661CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMazeScrapper.Models", "TvMazeScrapper.Models\TvMazeScrapper.Models.csproj", "{68332452-B061-488E-B8AA-372E319661CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.Services", "TvMazeScrapper.Services\TvMazeScrapper.Services.csproj", "{8F959126-7148-48C2-BBC8-987850094FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMazeScrapper.Services", "TvMazeScrapper.Services\TvMazeScrapper.Services.csproj", "{8F959126-7148-48C2-BBC8-987850094FDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.Domain", "TvMazeScrapper.Domain\TvMazeScrapper.Domain.csproj", "{8C4E36A0-0CC7-4C71-9CAF-807510F071C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMazeScrapper.Domain", "TvMazeScrapper.Domain\TvMazeScrapper.Domain.csproj", "{8C4E36A0-0CC7-4C71-9CAF-807510F071C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMazeScrapper.DataAccess", "TvMazeScrapper.DataAccess\TvMazeScrapper.DataAccess.csproj", "{6A454A2F-79A1-48F5-9386-62DDF88CE91B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMazeScrapper.DataAccess", "TvMazeScrapper.DataAccess\TvMazeScrapper.DataAccess.csproj", "{6A454A2F-79A1-48F5-9386-62DDF88CE91B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{11AB3AD2-8A73-49D0-BC78-3EC544330BC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazePage", "MazePage\MazePage.csproj", "{583EE793-967B-426C-8B20-74B347EAD431}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,16 @@ Global
 		{6A454A2F-79A1-48F5-9386-62DDF88CE91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A454A2F-79A1-48F5-9386-62DDF88CE91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A454A2F-79A1-48F5-9386-62DDF88CE91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583EE793-967B-426C-8B20-74B347EAD431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583EE793-967B-426C-8B20-74B347EAD431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583EE793-967B-426C-8B20-74B347EAD431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583EE793-967B-426C-8B20-74B347EAD431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{583EE793-967B-426C-8B20-74B347EAD431} = {11AB3AD2-8A73-49D0-BC78-3EC544330BC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1FA9116-16AA-496E-B5B1-940392E20C5A}
