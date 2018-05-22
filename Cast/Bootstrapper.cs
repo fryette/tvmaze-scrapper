@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Nancy;
 using Nancy.Bootstrapper;
-using Nancy.IO;
-using Nancy.ModelBinding;
-using Nancy.Responses.Negotiation;
 using Nancy.TinyIoc;
 using Newtonsoft.Json;
 

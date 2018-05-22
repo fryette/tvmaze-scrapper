@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Cast.Infrastructure;
 using Nancy;
 using Newtonsoft.Json;
