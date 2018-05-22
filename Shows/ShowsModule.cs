@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Nancy;
 using Shows.DataModels;
+using Shows.Infrastructure;
 
 namespace Shows
 {

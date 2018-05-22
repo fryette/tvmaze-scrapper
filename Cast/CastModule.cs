@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Cast.Infrastructure;
+using Cast.Infrastructure.Interfaces;
 using Nancy;
 using Newtonsoft.Json;
 

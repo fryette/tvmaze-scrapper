@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Shows.Clients;
 
-namespace Shows.Clients
+namespace Shows.Infrastructure
 {
     public interface ICastClient
     {

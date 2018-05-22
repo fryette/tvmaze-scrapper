@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Shows.DataModels;
 
-namespace Shows
+namespace Shows.Infrastructure
 {
     public interface IScrapperShowsService
     {

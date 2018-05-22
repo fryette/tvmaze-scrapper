@@ -2,7 +2,7 @@
 using TvMazeScrapper.Domain.App;
 using TvMazeScrapper.Domain.TvMaze;
 
-namespace TvMazeScrapper.DataAccess
+namespace TvMazeScrapper.DataAccess.App
 {
     public class ShowsContext : DbContext
     {

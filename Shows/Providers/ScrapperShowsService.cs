@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Shows.Clients;
 using Shows.DataModels;
+using Shows.Infrastructure;
 
-namespace Shows
+namespace Shows.Providers
 {
     public class ScrapperShowsService : IScrapperShowsService
     {

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using TvMazeScrapper.DataAccess;
+using TvMazeScrapper.DataAccess.App;
 using TvMazeScrapper.Domain.App;
 using TvMazeScrapper.Domain.TvMaze;
 using TvMazeScrapper.Infrastructure;

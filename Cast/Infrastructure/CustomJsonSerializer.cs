@@ -1,7 +1,6 @@
-﻿using Cast.Infrastructure;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace Cast
+namespace Cast.Infrastructure
 {
     public sealed class CustomJsonSerializer : JsonSerializer
     {

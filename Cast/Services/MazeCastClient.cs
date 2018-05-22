@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Cast.DataModels;
 using Cast.Infrastructure;
+using Cast.Infrastructure.Interfaces;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Polly;

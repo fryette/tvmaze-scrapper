@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
-using TvMazeScrapper.Domain;
 using TvMazeScrapper.Domain.App;
 using TvMazeScrapper.Domain.TvMaze;
 using TvMazeScrapper.Models.App;

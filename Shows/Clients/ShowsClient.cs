@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Polly;
 using Shows.DataModels;
+using Shows.Infrastructure;
 
 namespace Shows.Clients
 {

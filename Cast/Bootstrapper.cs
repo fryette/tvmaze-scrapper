@@ -1,4 +1,5 @@
 ﻿using System;
+using Cast.Infrastructure;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;

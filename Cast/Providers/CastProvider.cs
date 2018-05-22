@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Cast.Infrastructure;
+using Cast.Infrastructure.Interfaces;
 
 namespace Cast.Providers
 {

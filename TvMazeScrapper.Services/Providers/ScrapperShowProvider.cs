@@ -3,10 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using TvMazeScrapper.DataAccess;
 using TvMazeScrapper.Domain.App;
+using TvMazeScrapper.Infrastructure.Interfaces.Api;
 using TvMazeScrapper.Infrastructure.Interfaces.App;
 using TvMazeScrapper.Infrastructure.Interfaces.Providers;
 using TvMazeScrapper.Models.App;
-using TvMazeScrapper.Services.Api.TvMazeApi;
 
 namespace TvMazeScrapper.Services.Providers
 {

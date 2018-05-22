@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using TvMazeScrapper.Models.App;
 
-namespace TvMazeScrapper.Services.Api.TvMazeApi
+namespace TvMazeScrapper.Infrastructure.Interfaces.Api
 {
     public interface ITvMazeApiService
     {

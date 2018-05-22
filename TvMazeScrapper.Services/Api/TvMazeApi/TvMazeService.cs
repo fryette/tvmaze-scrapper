@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using TvMazeScrapper.DataAccess;
 using TvMazeScrapper.Domain.TvMaze;
 using TvMazeScrapper.Infrastructure.Interfaces;
+using TvMazeScrapper.Infrastructure.Interfaces.Api;
 using TvMazeScrapper.Infrastructure.Interfaces.App;
 using TvMazeScrapper.Models.App;
 using TvMazeScrapper.Services.Api.TvMazeApi.DataModels;
