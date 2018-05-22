@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cast
+namespace Cast.DataModels
 {
     public class Person
     {

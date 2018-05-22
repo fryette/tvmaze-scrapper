@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using Cast.DataAccess;
+using Cast.Infrastructure;
 using Nancy;
 using Newtonsoft.Json;
 
@@ -8,7 +8,7 @@ namespace Cast
 {
     public sealed class CastModule : NancyModule
     {
-        public CastModule(IMazeCastClient client, IMazeCastStore store) : base("/casts")
+        public CastModule(ICastsProvider provider) : base("/casts")
         {
             Get(
                 "/",
@@ -25,9 +25,9 @@ namespace Cast
                         };
                     }
 
-                    int[] castIds = JsonConvert.DeserializeObject<int[]>(ids);
+                    int[] showIds = JsonConvert.DeserializeObject<int[]>(ids);
 
-                    if (!castIds.Any())
+                    if (!showIds.Any())
                     {
                         return new Response
                         {
@@ -36,20 +36,7 @@ namespace Cast
                         };
                     }
 
-                    var result = new List<DataModels.Cast>();
-
-                    foreach (var id in castIds)
-                    {
-                        var cast = await client.FetchCastByShowIdAsync(id);
-                        if (cast != null)
-                        {
-                            result.Add(cast);
-                        }
-                    }
-
-                    await store.SaveCastsAsync(result);
-
-                    return null;
+                    return Negotiate.WithModel(await provider.LoadCastAsync(showIds)).WithHeader("cache-control", "max-age:86400");
                 });
         }
     }

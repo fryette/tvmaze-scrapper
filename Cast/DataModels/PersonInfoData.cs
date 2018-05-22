@@ -1,4 +1,4 @@
-﻿namespace Cast
+﻿namespace Cast.DataModels
 {
     public class PersonInfo
     {

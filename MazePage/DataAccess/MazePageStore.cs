@@ -14,7 +14,7 @@ namespace MazePage.DataAccess
         private const string INSERT_PAGE = @"insert MazePage (PageId) values (@PageId)";
         private const string INSERT_SHOWS = @"insert MazeShow (Id, PageId, Name) values (@Id, (SELECT PageId from MazePage WHERE PageId = @PageId), @Name)";
         private const string READ_ITEMS_SQL = @"select * from MazePage, MazeShow
-where MazePage.PageId = @PageId and MazeShow.PageId=@PageId";
+WHERE MazePage.PageId = @PageId and MazeShow.PageId=@PageId";
 
         public async Task SaveMazePageAsync(MazePageData page)
         {
