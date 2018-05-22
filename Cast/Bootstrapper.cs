@@ -15,20 +15,5 @@ namespace Cast
     {
         protected override Func<ITypeCatalog, NancyInternalConfiguration> InternalConfiguration =>
             NancyInternalConfiguration.WithOverrides(builder => builder.StatusCodeHandlers.Clear());
-
-        protected override void ConfigureApplicationContainer(TinyIoCContainer container)
-        {
-            base.ConfigureApplicationContainer(container);
-
-            container.Register<JsonSerializer, CustomJsonSerializer>();
-        }
-
-        public sealed class CustomJsonSerializer : JsonSerializer
-        {
-            public CustomJsonSerializer()
-            {
-                this.DateFormatString = "yyyy-MM-dd";
-            }
-        }
     }
 }

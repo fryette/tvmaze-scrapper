@@ -10,11 +10,17 @@ namespace Cast.DataAccess
 {
     public class MazeCastStore : IMazeCastStore
     {
-        private string connectionString =
+        private const string CONNECTION_STRING =
             @"Data Source=EPBYBREW0024\SQLEXPRESS;Initial Catalog=TvMazeScrapper;Integrated Security=True";
-        private const string INSERT_SSHOWS_IDS = @"INSERT DownloadedShows (Id) VALUES (@ShowId)";
+        private const string INSERT_SHOWS_IDS = @"MERGE INTO DownloadedShows AS Target
+USING (SELECT @Id as Id) as Source
+ON (Target.Id=Source.Id)
+WHEN MATCHED THEN
+UPDATE SET Target.Id=@Id
+WHEN NOT MATCHED THEN 
+INSERT (Id) VALUES (@Id);";
         private const string INSERT_PERSONS = @"MERGE INTO MazePerson WITH (HOLDLOCK) AS Target
-USING (SELECT @Id as id) as Source
+USING (SELECT @Id as Id) as Source
 ON (Target.Id=Source.Id)
 WHEN MATCHED THEN
 UPDATE SET Target.Id=@Id, Target.Birthday=@Birthday, Target.Name=@Name
@@ -29,13 +35,13 @@ ON ShowsPersons.ShowId IN @ids AND ShowsPersons.PersonId=MazePerson.Id";
 
         public async Task SaveCastsAsync(List<DataModels.Cast> casts)
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(CONNECTION_STRING))
             {
                 await connection.OpenAsync();
 
                 using (var transaction = connection.BeginTransaction())
                 {
-                    await connection.ExecuteAsync(INSERT_SSHOWS_IDS, casts.Select(x => new { x.ShowId }), transaction);
+                    await connection.ExecuteAsync(INSERT_SHOWS_IDS, casts.Select(x => new { Id = x.ShowId }), transaction);
                     await connection.ExecuteAsync(INSERT_PERSONS, casts.SelectMany(x => x.Persons), transaction);
                     await connection.ExecuteAsync(
                         INSERT_SHOWSPERSON,
@@ -51,7 +57,7 @@ ON ShowsPersons.ShowId IN @ids AND ShowsPersons.PersonId=MazePerson.Id";
 
         public async Task<List<DataModels.Cast>> GetCastsAsync(IReadOnlyList<int> ids)
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(CONNECTION_STRING))
             {
                 await connection.OpenAsync();
 
