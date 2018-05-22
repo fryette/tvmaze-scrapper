@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,9 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper.Contrib" Version="1.50.5" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
-    <PackageReference Include="Nancy" Version="2.0.0-clinteastwood" />
-    <PackageReference Include="Nancy.Serialization.JsonNet" Version="2.0.0-clinteastwood" />
+    <PackageReference Include="Nancy" Version="2.0.0-barneyrubble" />
     <PackageReference Include="Polly" Version="6.0.1" />
     <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="EventStore.ClientAPI.NetCore" Version="4.1.0.23" />

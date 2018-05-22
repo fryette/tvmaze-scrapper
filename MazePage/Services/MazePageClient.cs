@@ -24,7 +24,7 @@ namespace MazePage.Services
                     //TODO: Should be used microservice for logging instedof Console
                     (ex, _) => Console.WriteLine(ex.ToString()));
 
-        public async Task<MazePageData> FetchShowsAsync(int pageNumber)
+        public async Task<IEnumerable<Show>> FetchShowsAsync(int pageNumber)
         {
             var response = string.Empty;
 
@@ -34,11 +34,9 @@ namespace MazePage.Services
                     response = await _client.GetStringAsync(string.Format(GET_MAZE_PAGE_PATH_TEMPLATE, pageNumber)).ConfigureAwait(false);
                 });
 
-            var showsData = JsonConvert.DeserializeObject<List<ShowData>>(response);
+            var showsData = JsonConvert.DeserializeObject<List<Show>>(response);
 
-            var result = new MazePageData { Id = pageNumber, Shows = showsData };
-
-            return result;
+            return showsData;
         }
     }
 }

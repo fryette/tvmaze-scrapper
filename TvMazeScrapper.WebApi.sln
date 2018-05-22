@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMazeScrapper.DataAccess",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{11AB3AD2-8A73-49D0-BC78-3EC544330BC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazePage", "MazePage\MazePage.csproj", "{583EE793-967B-426C-8B20-74B347EAD431}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MazePage", "MazePage\MazePage.csproj", "{583EE793-967B-426C-8B20-74B347EAD431}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cast", "Cast\Cast.csproj", "{DF6BCDEC-1E9B-4159-902E-B449A1FB129B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cast", "Cast\Cast.csproj", "{DF6BCDEC-1E9B-4159-902E-B449A1FB129B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shows", "Shows\Shows.csproj", "{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,14 @@ Global
 		{DF6BCDEC-1E9B-4159-902E-B449A1FB129B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DF6BCDEC-1E9B-4159-902E-B449A1FB129B}.Release|x64.ActiveCfg = Release|x64
 		{DF6BCDEC-1E9B-4159-902E-B449A1FB129B}.Release|x64.Build.0 = Release|x64
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}.Debug|x64.Build.0 = Debug|Any CPU
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}.Release|x64.ActiveCfg = Release|Any CPU
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +110,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{583EE793-967B-426C-8B20-74B347EAD431} = {11AB3AD2-8A73-49D0-BC78-3EC544330BC0}
 		{DF6BCDEC-1E9B-4159-902E-B449A1FB129B} = {11AB3AD2-8A73-49D0-BC78-3EC544330BC0}
+		{2485A3C0-28C4-4542-BFF7-7AEAE1BEC297} = {11AB3AD2-8A73-49D0-BC78-3EC544330BC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1FA9116-16AA-496E-B5B1-940392E20C5A}
