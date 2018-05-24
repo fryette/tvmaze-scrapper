@@ -9,11 +9,4 @@
     <PackageReference Include="AutoMapper" Version="6.2.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TvMazeScrapper.DataAccess\TvMazeScrapper.DataAccess.csproj" />
-    <ProjectReference Include="..\TvMazeScrapper.Domain\TvMazeScrapper.Domain.csproj" />
-    <ProjectReference Include="..\TvMazeScrapper.Infrastructure\TvMazeScrapper.Infrastructure.csproj" />
-    <ProjectReference Include="..\TvMazeScrapper.Models\TvMazeScrapper.Models.csproj" />
-  </ItemGroup>
-
 </Project>

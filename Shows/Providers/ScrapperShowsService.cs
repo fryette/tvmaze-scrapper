@@ -22,10 +22,11 @@ namespace Shows.Providers
 
         public async Task<IEnumerable<Show>> LoadShowsAsync(int pageNumber = 0)
         {
+            var itemsToSkip = GetNumberOfItemsThatShouldBeSkipped(pageNumber);
             var shows = await _showsClient.FetchShowsAsync(
                 GetTvMazePage(pageNumber),
                 GetNumberOfItemsThatShouldBeSkipped(pageNumber),
-                ITEMS_PER_PAGE);
+                itemsToSkip + ITEMS_PER_PAGE);
 
             var casts = (await _castClient.FetchCastByShowIdAsync(shows.Select(x => x.Id))).ToDictionary(
                 x => x.ShowId,

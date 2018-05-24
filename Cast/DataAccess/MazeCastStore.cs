@@ -10,8 +10,8 @@ namespace Cast.DataAccess
 {
     public class MazeCastStore : IMazeCastStore
     {
-        private const string CONNECTION_STRING =
-            @"Data Source=EPBYBREW0024\SQLEXPRESS;Initial Catalog=TvMazeScrapper;Integrated Security=True";
+        private const string CONNECTION_STRING = "Your Connection String";
+
         private const string INSERT_SHOWS_IDS = @"MERGE INTO DownloadedShows AS Target
 USING (SELECT @Id as Id) as Source
 ON (Target.Id=Source.Id)

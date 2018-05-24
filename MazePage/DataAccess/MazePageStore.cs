@@ -10,8 +10,8 @@ namespace MazePage.DataAccess
 {
     public class MazePageStore : IMazePageStore
     {
-        private const string CONNECTION_STRING =
-            @"Data Source=EPBYBREW0024\SQLEXPRESS;Initial Catalog=TvMazeScrapper;Integrated Security=True";
+        private const string CONNECTION_STRING ="Your Connection String";
+
         private const string INSERT_SHOWS = @"insert MazeShow (Id, PageId, Name) values (@Id, @PageId, @Name)";
         private const string READ_ITEMS_SQL = @"select * from MazeShow WHERE MazeShow.PageId=@PageId";
 
