@@ -30,3 +30,6 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+/Cast/Properties/PublishProfiles/testserver - Web Deploy.pubxml
+/MazePage/Properties/PublishProfiles/testserver - Web Deploy.pubxml
+/Shows/Properties/PublishProfiles/testserver - Web Deploy.pubxml

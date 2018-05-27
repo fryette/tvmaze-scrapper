@@ -39,14 +39,7 @@ namespace Shows.Clients
                 async () =>
                 {
                     var response = await _client.GetStringAsync(string.Format(REQUEST_PARAMETERS, string.Join(',', showIds)));
-                    try
-                    {
-                        showData = JsonConvert.DeserializeObject<List<ShowData>>(response, _dateTimeConverter);
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                    }
+                    showData = JsonConvert.DeserializeObject<List<ShowData>>(response, _dateTimeConverter);
                 });
 
             return showData;

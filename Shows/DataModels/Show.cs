@@ -6,6 +6,6 @@ namespace Shows.DataModels
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Person> Cast { get; set; }
+        public IEnumerable<Person> Cast { get; set; }
     }
 }

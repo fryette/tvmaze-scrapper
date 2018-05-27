@@ -34,7 +34,7 @@ namespace Shows.Providers
 
             foreach (var show in shows)
             {
-                show.Cast = casts[show.Id];
+                show.Cast = casts[show.Id].OrderByDescending(x => x.Birthday);
             }
 
             return shows;
